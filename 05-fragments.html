@@ -7,17 +7,24 @@
      <!-- Load babel to compile jsx-->
      <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
      <script type="text/babel">
+        // The React.Fragment or "<>" argument allows us to put elements side by side without needing to have a container element like a <div> 
+        const element = <>
+            <span>Hello</span> <span>World</span>
+            </>
+
+
         // const element = <div className="container">Hello World</div>
    
-        const helloElement = React.createElement('span', null, 'Hello')
-        const worldElement = React.createElement('span', null, 'World')
-        const element = React.createElement(
-            React.Fragment,
-            null,
-            helloElement,
-            ' ',
-            worldElement,
-        )
+      //  const helloElement = React.createElement('span', null, 'Hello')
+      //  const worldElement = React.createElement('span', null, 'World')
+      //  const element = React.createElement(
+      //      React.Fragment,
+      //      null,
+      //      helloElement,
+      //      // You can add an extra child here to get an extra space
+      //      ' ',
+      //      worldElement,
+      //  )
 
         ReactDOM.render(element, document.getElementById('root'))
      </script>

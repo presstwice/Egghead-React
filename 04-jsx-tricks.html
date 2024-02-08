@@ -10,8 +10,17 @@
             // Create the react element
             const rootElement = document.getElementById('root')
             const children = 'Hello World'
-            const element = <div className="container">{children}</div>
-    
+            const className = 'container'
+            const props = {children, className}
+            // Anything in {} is evaluated as an expression in the babel complier 
+            // const element = <div className={className}>{children}</div>
+                // The above can also be written with the special prop in the element
+            // const element = <div className={className} children={children}/>
+            // You can then pass the props in the props expression to the react element <div> using a spread
+                // You can even add to the props in the div itself still. If you want to override the props in the spread you can provide it after the spread 
+                // Whatever comes last takes property in the jsx element
+            const element = <div id="app-root" {...props} className="not-container" />
+
         // Use ReactDOM to render the element to the page 
         ReactDOM.render(element, rootElement)
      

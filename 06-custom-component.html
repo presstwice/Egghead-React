@@ -7,13 +7,22 @@
      <!-- Load babel to compile jsx-->
      <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
      <script type="text/babel">
+        // To paramatise something in javascript you need to create a function 
+        // You can use this to create a custom component you can use again & again
+        // This element needs to be a Capital so the compiler (babel) passes the function to react create element as opposed to a string "message" 
+        const Message = props => <div className="message">{props.children}</div>
         const element = (
+            // You can pass anything in this container react can render or additional components or elements 
             <div className="container">
-                <div className="message">Hello World </div>
+                <Message>
+                    Hello World
+                    <Message> Goodbye World </Message>
+                <span> Hey There </span>]
+                </Message>
+                
             </div>
         )
 
-
-        ReactDOM.render(elemet, document.getElementById('root'))
+        ReactDOM.render(element, document.getElementById('root'))
      </script>
 </body>

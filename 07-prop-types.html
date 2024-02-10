@@ -6,25 +6,23 @@
      <script src ="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
      <!-- Load babel to compile jsx-->
      <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+     <script src="https://unpkg.com/prop-types@15.6/prop-types.min.js"></script>
      <script type="text/babel">
     // How to validate Custom React Componenet Props with PropTypes 
         const rootElement = document.getElementById('root')
 
-        function sayHello({firstName, lastName}) {
+        function SayHello({firstName, lastName}) {
             return (
                 <div>
-                    Hello {firstName} {lastname} !
+                    Hello {firstName} {lastName}!
                 </div>
             )
         }
 
-        SayHello.propTypes = {
-            firstName(props, propName, componentName) {
-                if (typeof props[propName] !== 'string') {
-                    return new Error('Hey, the component ${componentName} needs the prop ${propName} to be a string, but you passed a ${typeof props[propName]}')
-                }
-            }
-        }
+       SayHello.propTypes = {
+            firstName: PropTypes.string.isRequred,
+            lastName: PropTypes.string.isRequired,
+       }
 
         const element = <SayHello firstName={false} />
 

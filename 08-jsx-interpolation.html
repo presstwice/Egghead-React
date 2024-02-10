@@ -8,15 +8,26 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://unpkg.com/prop-types@15.6/prop-types.min.js"></script>
     <script type="text/babel">
+    <style>
+        /* css */
+    </style>
 
         // The text "Hello World" has 11 characters
         // The text "" has No characters 
         function CharacterCount({text}) {
             // Create a length variable, if variable is 0 diaplay 'No' otherwise display text.length
-            const length = text.length ? text.length : 'No'
+            // const length = text.length ? text.length : 'No'
+            // ? == (turnary), : == then
+
+            // js 
+
+            // jsx
+                // Open bracket with tag -> prop syntax -> children -> closing tag
             return (
                 <div>
-                    {`The text "${text}" has `} <strong>{length}</strong> characters 
+                    { /* js it is an expression that evaulates to some value, can't be a for loop or a if statement */ `The text "${text}" has `} 
+                    {text.length ? <strong>{text.length}</strong> : 'No'}
+                    {' characters'}
                 </div>
             )
         }

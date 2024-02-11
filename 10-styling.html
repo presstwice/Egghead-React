@@ -37,8 +37,27 @@
    <script type="text/babel">
     const element = (
         <div>
-            <div className="box box--small">small lightblue box</div>
+            <div className="box box--small"
+            style={{fontstyle: 'italic', backgroundColor: 'lightblue'}} 
+            >
+            small lightblue box
+            </div>
+
+            <div className="box box--medium"
+            style={{fontstyle: 'italic', backgroundColor: 'lightblue'}} 
+            >
+            small lightblue box
+            </div>
+
+            <div className="box box--large"
+            style={{fontstyle: 'italic', backgroundColor: 'lightblue'}} 
+            >
+            small lightblue box
+            </div>
+
         </div>
+
+        
     )
 
         ReactDOM.render(element, document.getElementById('root'))

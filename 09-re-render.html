@@ -9,9 +9,24 @@
     <script type="text/babel">
         const rootElement = document.getElementById('root')
 
+        function tick() {
+        // this renders the time 
+        // React keeps track of your focus for you
+        // Whenever state changes you don't need to re-render your whole application
+        // When you create react elements you create a re-render. It compares the changes and only updates the changes from the last tiem you returned jsx 
         const time = new Date().toLocaleTimeString()
-        const element = <div>{time}</div>
+        const element = (
+            <div>
+                <input value={time} />
+                <input value={time} />
+            </div>
+        )
+        
 
         ReactDOM.render(element, rootElement)
+        }
+
+    tick()
+    setInterval(tick, 1000)
     </script>   
 </body>

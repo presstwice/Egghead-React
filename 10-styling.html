@@ -1,0 +1,48 @@
+<body>
+    <div id="root"/>
+    <!-- Creates elements in react -->
+    <script src ="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+    <!-- Renders react elements to the page -->
+    <script src ="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+    <!-- Load babel to compile jsx-->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+
+        .box {
+            border: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+
+        }
+
+        .box--large {
+            width: 270px;
+            height: 270px;
+        }
+
+        .box--medium {
+            width: 180px;
+            height: 180px;
+        }
+
+        .box--small {
+            width: 90px;
+            height: 90px;
+        }
+    </style>
+
+   <script type="text/babel">
+    const element = (
+        <div>
+            <div>small lightblue box</div>
+        </div>
+    )
+
+
+
+        ReactDOM.render(element, document.getElementById('root'))
+    </script>
+</body>

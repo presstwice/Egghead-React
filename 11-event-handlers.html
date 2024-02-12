@@ -1,0 +1,46 @@
+<body>
+        <div id="root"></div>
+        <!-- Creates elements in react -->
+        <script src ="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+        <!-- Renders react elements to the page -->
+        <script src ="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+        <!-- Load babel to compile jsx-->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/babel">
+            const rootElement = document.getElementById('root')
+
+            const state = {eventCount: 0, username: ''}
+
+            function App() {
+                function handleClick() {
+                    setState({eventCount: state.eventCount + 1 })
+                }
+                return ( 
+                    <div>
+                        <p> There have been {state.eventCount} events.</p>
+                        <p>
+                            <button onClick={handleClick}> 
+                                Click Me 
+                            </button>
+                        </p>
+                        <p>You typed: {state.username}</p>
+                        <p>
+                            <input />
+                        </p>
+                    </div>
+                )
+            }
+
+        // This updates our state variable then render the App
+        function setState(newState) {
+            Object.assign(state, newState)
+            renderApp()
+        }
+
+        function renderApp() {
+            ReactDOM.render(<App />, document.getElementById('root'))
+        }
+
+        renderApp()
+        </script>
+</body>

@@ -8,7 +8,10 @@
         function Greeting() {
             // You can useState as many times as you need in your component keeps them independent 
             // The values in the state can be anything, boolean (true/false), a value (2), an object ({}) or an array ([])
-            const [name, setName] = React.useState(window.localStorage.getItem('name') || '')
+            const [name, setName] = React.useState(
+                // You can use an arrow function to return the initial value 
+                // This turns in the initial value arguement into a function that only calls for the initial value on the first render 
+                () => window.localStorage.getItem('name') || '')
             // Use effect stores your input into local storage, you can then call it in your useState 
             React.useEffect(() => {
                 window.localStorage.setItem('name', name)

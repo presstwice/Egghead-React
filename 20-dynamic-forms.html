@@ -9,26 +9,14 @@
         function UsernameForm() {
             const usernameInputRef= React.useRef()
             function handleSubmit(event) {
-                // To prevent a full page refresh you force the event.preventDefault
                 event.preventDefault()
-                console.dir(event.target)
-               //console.log('submitted')
-                
-
-                // const username = document.querySelector('input').value // Don't use this method
-                // const username = event.target[0].value
-                // const username = event.target.elements[0].value
-                // const username = usernameInputRef.current.value
                 const username = usernameInputRef.current.value
                 alert(`You entered: ${username}`)
             }
             return (
-                // You put a button type the same as the button name. But then put a submit handler on the form so it submits with any other method
                 <form onSubmit={handleSubmit}>
                     <div>
-                        <label htmlFor="usernameInput">
-                            Username:
-                        </label>
+                        <label htmlFor="usernameInput">Username:</label>
                         <input ref={usernameInputRef} id="usernameInput" type="text"/>
                     </div>
                     <button type="submit">Submit</button>

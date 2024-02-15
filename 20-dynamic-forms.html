@@ -13,11 +13,15 @@
                 const username = usernameInputRef.current.value
                 alert(`You entered: ${username}`)
             }
+
+            function handleChange(event) {
+                const username = event.target.value
+            }
             return (
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="usernameInput">Username:</label>
-                        <input ref={usernameInputRef} id="usernameInput" type="text"/>
+                        <input ref={usernameInputRef} id="usernameInput" type="text" onChange={handleChange}/>
                     </div>
                     <button type="submit">Submit</button>
                 </form>

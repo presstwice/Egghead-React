@@ -7,7 +7,6 @@
     
         
         function UsernameForm() {
-            const usernameInputRef= React.useRef()
             function handleSubmit(event) {
                 // To prevent a full page refresh you force the event.preventDefault
                 event.preventDefault()
@@ -19,7 +18,7 @@
                 // const username = event.target[0].value
                 // const username = event.target.elements[0].value
                 // const username = usernameInputRef.current.value
-                const username = usernameInputRef.current.value
+                const username = event.target.elements.usernameInput.value
                 alert(`You entered: ${username}`)
             }
             return (
@@ -29,7 +28,7 @@
                         <label htmlFor="usernameInput">
                             Username:
                         </label>
-                        <input ref={usernameInputRef} id="usernameInput" type="text"/>
+                        <input id="usernameInput" type="text"/>
                     </div>
                     <button type="submit">Submit</button>
                 </form>
